@@ -4,14 +4,13 @@ package cm.grant.backfire;
  * A DOM element.
  */
 public class $DOM<T> {
-  public static class divImpl {
-    public int i = 0;
-    public divImpl() {
-      System.out.println(i);
-    }
-  }
+  public static class Div extends DOMNode {}
+  public static class Img extends ImgNode {}
 
-  public static divImpl div() {
-    return new divImpl();
+  public static Div div() {
+    return new Div();
+  }
+  public static Img img() {
+    return new Img();
   }
 }

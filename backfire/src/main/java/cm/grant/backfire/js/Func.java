@@ -3,5 +3,6 @@ package cm.grant.backfire.js;
 /**
  * A Javascript function
  */
-public class Func {
+public interface Func extends Runnable {
+
 }

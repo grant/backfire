@@ -4,6 +4,9 @@ import cm.grant.backfire.$DOM;
 import cm.grant.backfire.PropTypes;
 import cm.grant.backfire.ReactComponent;
 import cm.grant.backfire.js.Func;
+import cm.grant.backfire.js.Noop;
+
+import java.util.function.LongUnaryOperator;
 
 /**
  * An example class
@@ -16,45 +19,41 @@ public class $ExampleComponent extends ReactComponent {
     /** CSS classes to be added to the modal */
     public String className = "";
     /** Method to end the modal sequence on demand */
-    public Func onClose = new Func();
+    public Func onClose = new Noop();
     /** Whether to show the 'x' close button in the top right */
     public Boolean showCloseButton = true;
     /** whether the modal is in a waiting state */
     public Boolean waiting = false;
+    /** whether the modal is delayed */
+    public Boolean delayed = false;
   }
 
   @Override
   protected void render() {
-    $DOM.divImpl div = $DOM.div();
-    $DOM.divImpl div2 = $DOM.div();
-    div.i += 1;
-    div2.i += 1;
-    System.out.println(div.i);
+    Func getCloseButton = () -> {
+      $DOM.div().className("modal-exit").onClick(props.onClose).html(
+          "&times"
+      );
+    };
 
-//    Func getCloseButton = () -> {
-//      return $DOM.div().className("modal-exit").onClick(props.onClose).html(
-//          "&times"
-//      );
-//    };
-//
-//    Func getModalSpinner = () -> {
-//      return $DOM.div.className("modal-waiting").html(
-//          $Loader.loading(true)
-//      );
-//    };
-//
-//    return $DOM.div.className("Modal " + this.props.className).html(
-//        $DOM.div.className("modal-dialog " + (this.props.delayed ? "delayed" : "")).html(
-//            this.props.showCloseButton ? getCloseButton.call(this) : null,
-//            this.props.waiting ? getModalSpinner() : null,
-//            this.props.bannerImgSrc ?
-//                $DOM.div.className("modal-banner").html(
-//                    $DOM.img.src(this.props.bannerImgSrc)
-//                ) : null,
-//            $DOM.div.className("modal-content").html(
-//                this.props.children
-//            )
-//        )
-//    );
+    Func getModalSpinner = () -> {
+      $DOM.div().className("modal-waiting").html(
+          $Loader.loading(true)
+      );
+    };
+
+    return $DOM.div().className("Modal " + this.props.className).html(
+        $DOM.div().className("modal-dialog " + (props.delayed ? "delayed" : "")).html(
+            this.props.showCloseButton ? getCloseButton.run() : null,
+            this.props.waiting ? getModalSpinner.run() : null,
+            this.props.bannerImgSrc ?
+                $DOM.div().className("modal-banner").html(
+                    $DOM.img().src(this.props.bannerImgSrc)
+                ) : null,
+            $DOM.div().className("modal-content").html(
+                props.children
+            )
+        )
+    );
   }
 }
