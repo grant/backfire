@@ -8,9 +8,9 @@ import cm.grant.backfire.js.Func;
 import cm.grant.backfire.js.Noop;
 
 /**
- * An example class
+ * An example modal class
  */
-public class $ExampleComponent extends ReactComponent {
+public class $Modal extends ReactComponent {
   private Props props = new Props();
   public class Props extends PropTypes {
     /** optional banner to be included at the top of the modal */
@@ -27,6 +27,11 @@ public class $ExampleComponent extends ReactComponent {
     public Boolean delayed = false;
   }
 
+  public $Modal() {}
+  public $Modal(Props props) {
+    this.props = props;
+  }
+
   @Override
   protected DOMNode render() {
     Func getCloseButton = () ->
@@ -34,10 +39,14 @@ public class $ExampleComponent extends ReactComponent {
           "&times"
       );
 
-    Func getModalSpinner = () ->
-      $DOM.div().className("modal-waiting").html(
-          $Loader().loading(true)
+    Func getModalSpinner = () -> {
+      $Loader.Props loaderProps = new $Loader.Props();
+      loaderProps.loading = true;
+      return $DOM.div().className("modal-waiting").html(
+          new $Loader(loaderProps)
       );
+    };
+
 
     Func getCloseButton1 = getCloseButton;
     return $DOM.div().className("Modal " + this.props.className).html(

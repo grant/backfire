@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 public class $ExampleComponentTest extends TestCase {
 
   public void testRender() throws Exception {
-    $ExampleComponent $ExampleComponent = new $ExampleComponent();
-    $ExampleComponent.render();
+    $Modal $ModalComponent = new $Modal();
+    $ModalComponent.render();
   }
 }

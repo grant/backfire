@@ -3,7 +3,7 @@ package cm.grant.backfire;
 /**
  * A DOM element.
  */
-public class $DOM<T> {
+public class $DOM {
   public static class Div extends DOMNode {}
   public static class Img extends ImgNode {}
 
