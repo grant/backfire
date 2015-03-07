@@ -1,11 +1,14 @@
 package cm.grant.backfire.js;
 
+import cm.grant.backfire.DOMNode;
+
 /**
- *
+ * Does nothing.
  */
 public class Noop implements Func {
-  @Override
-  public void run() {
 
+  @Override
+  public DOMNode get() {
+    return null;
   }
 }

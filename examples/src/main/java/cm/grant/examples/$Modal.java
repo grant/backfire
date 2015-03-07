@@ -47,7 +47,6 @@ public class $Modal extends ReactComponent {
       );
     };
 
-
     Func getCloseButton1 = getCloseButton;
     return $DOM.div().className("Modal " + this.props.className).html(
         $DOM.div().className("modal-dialog " + (this.props.delayed ? "delayed" : "")).html(
