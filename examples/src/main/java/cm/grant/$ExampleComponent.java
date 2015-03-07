@@ -1,18 +1,22 @@
-package com.alch.generators.constants;
+package cm.grant;
 
-import java.util.function.Function;
+import grant.cm.$DOM;
+import grant.cm.PropTypes;
+import grant.cm.ReactComponent;
+import grant.cm.js.Func;
 
 /**
  * An example class
  */
-public class $Model extends React {
-  private class prop {
+public class $ExampleComponent extends ReactComponent {
+  Props props = new Props();
+  class Props extends PropTypes {
     /** optional banner to be included at the top of the modal */
     public String bannerImgSrc = "";
     /** CSS classes to be added to the modal */
     public String className = "";
     /** Method to end the modal sequence on demand */
-    public Function onClose = ModalSequenceManager.nextStep;
+    public Func onClose = new Func();
     /** Whether to show the 'x' close button in the top right */
     public Boolean showCloseButton = true;
     /** whether the modal is in a waiting state */
@@ -22,7 +26,7 @@ public class $Model extends React {
   @Override
   private void render() {
     Func getCloseButton = () -> {
-      return $DOM.div.className("modal-exit").onClick(this.props.onClose).html(
+      return $DOM.div.className("modal-exit").onClick(props.onClose).html(
           "&times"
       );
     };
