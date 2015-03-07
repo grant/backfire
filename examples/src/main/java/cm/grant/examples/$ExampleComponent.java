@@ -1,19 +1,18 @@
 package cm.grant.examples;
 
 import cm.grant.backfire.$DOM;
+import cm.grant.backfire.DOMNode;
 import cm.grant.backfire.PropTypes;
 import cm.grant.backfire.ReactComponent;
 import cm.grant.backfire.js.Func;
 import cm.grant.backfire.js.Noop;
-
-import java.util.function.LongUnaryOperator;
 
 /**
  * An example class
  */
 public class $ExampleComponent extends ReactComponent {
   private Props props = new Props();
-  class Props extends PropTypes {
+  public class Props extends PropTypes {
     /** optional banner to be included at the top of the modal */
     public String bannerImgSrc = "";
     /** CSS classes to be added to the modal */
@@ -29,24 +28,23 @@ public class $ExampleComponent extends ReactComponent {
   }
 
   @Override
-  protected void render() {
-    Func getCloseButton = () -> {
-      $DOM.div().className("modal-exit").onClick(props.onClose).html(
+  protected DOMNode render() {
+    Func getCloseButton = () ->
+      $DOM.div().className("modal-exit").onClick(this.props.onClose).html(
           "&times"
       );
-    };
 
-    Func getModalSpinner = () -> {
+    Func getModalSpinner = () ->
       $DOM.div().className("modal-waiting").html(
-          $Loader.loading(true)
+          $Loader().loading(true)
       );
-    };
 
+    Func getCloseButton1 = getCloseButton;
     return $DOM.div().className("Modal " + this.props.className).html(
-        $DOM.div().className("modal-dialog " + (props.delayed ? "delayed" : "")).html(
-            this.props.showCloseButton ? getCloseButton.run() : null,
-            this.props.waiting ? getModalSpinner.run() : null,
-            this.props.bannerImgSrc ?
+        $DOM.div().className("modal-dialog " + (this.props.delayed ? "delayed" : "")).html(
+            this.props.showCloseButton ? getCloseButton.get() : null,
+            this.props.waiting ? getModalSpinner.get() : null,
+            this.props.bannerImgSrc.isEmpty() ?
                 $DOM.div().className("modal-banner").html(
                     $DOM.img().src(this.props.bannerImgSrc)
                 ) : null,

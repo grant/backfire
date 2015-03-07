@@ -1,8 +1,11 @@
 package cm.grant.backfire.js;
 
+import cm.grant.backfire.DOMNode;
+
 /**
  * A Javascript function
  */
-public interface Func extends Runnable {
-
+@FunctionalInterface
+public interface Func {
+  DOMNode get();
 }
