@@ -1,9 +1,9 @@
 package cm.grant.examples;
 
-import grant.cm.backfire.$DOM;
-import grant.cm.backfire.PropTypes;
-import grant.cm.backfire.ReactComponent;
-import grant.cm.backfire.js.Func;
+import cm.grant.backfire.$DOM;
+import cm.grant.backfire.PropTypes;
+import cm.grant.backfire.ReactComponent;
+import cm.grant.backfire.js.Func;
 
 /**
  * An example class
@@ -27,6 +27,8 @@ public class $ExampleComponent extends ReactComponent {
   protected void render() {
     $DOM.divImpl div = $DOM.div();
     $DOM.divImpl div2 = $DOM.div();
+    div.i += 1;
+    div2.i += 1;
     System.out.println(div.i);
 
 //    Func getCloseButton = () -> {

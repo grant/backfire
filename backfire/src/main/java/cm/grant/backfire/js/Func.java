@@ -1,4 +1,4 @@
-package grant.cm.backfire.js;
+package cm.grant.backfire.js;
 
 /**
  * A Javascript function

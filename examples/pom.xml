@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>cm.grant</groupId>
+    <groupId>grant.cm</groupId>
     <artifactId>backfire-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>grant.cm</groupId>
+  <groupId>grant.cm.examples</groupId>
   <artifactId>examples</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>examples</name>
@@ -17,7 +17,7 @@
   </properties>
   <dependencies>
       <dependency>
-          <groupId>grant.cm</groupId>
+          <groupId>grant.cm.backfire</groupId>
           <artifactId>backfire</artifactId>
           <version>1.0-SNAPSHOT</version>
       </dependency>

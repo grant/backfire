@@ -1,4 +1,4 @@
-package grant.cm.backfire;
+package cm.grant.backfire;
 
 /**
  * A DOM element.
