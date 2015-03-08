@@ -28,6 +28,9 @@ public class DOMNode {
   public DOMNode html(DOMNode ...d) {
     return this;
   }
+  public DOMNode html(List<DOMNode> d) {
+    return this;
+  }
   public DOMNode html(ReactComponent ...d) {
     return this;
   }
