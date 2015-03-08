@@ -3,7 +3,7 @@ package cm.grant.backfire;
 /**
  * A React component.
  */
-public abstract class ReactComponent<P extends PropTypes> {
+public abstract class ReactComponent {
   protected abstract DOMNode render();
 
   @Override

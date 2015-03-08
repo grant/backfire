@@ -6,7 +6,7 @@ import cm.grant.backfire.PropTypes;
 import cm.grant.backfire.ReactComponent;
 
 /**
- *
+ * A hello message.
  */
 public class $HelloMessage extends ReactComponent {
   final Props props;
