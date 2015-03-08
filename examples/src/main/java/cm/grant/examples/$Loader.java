@@ -35,7 +35,7 @@ public class $Loader extends ReactComponent {
 
   @Override
   protected DOMNode render() {
-    Func getLoaderGraphic = () -> {
+    Func<DOMNode> getLoaderGraphic = () -> {
       DOMNode $graphic = null;
       switch (props.flavor) {
         case INLINE:

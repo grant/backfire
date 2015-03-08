@@ -1,11 +1,9 @@
 package cm.grant.backfire.js;
 
-import cm.grant.backfire.DOMNode;
-
 /**
- * A Javascript function
+ * A Javascript function that returns a T.
  */
 @FunctionalInterface
-public interface Func {
-  DOMNode get();
+public interface Func<T> {
+  T get();
 }

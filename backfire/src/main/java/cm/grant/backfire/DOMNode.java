@@ -47,5 +47,10 @@ public class DOMNode {
   public String getInnerHTML() {
     return innerHTML;
   }
+
+  @Override
+  public String toString() {
+    return getOuterHTML();
+  }
 }
 

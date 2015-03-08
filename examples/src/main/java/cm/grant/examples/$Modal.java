@@ -34,12 +34,12 @@ public class $Modal extends ReactComponent {
 
   @Override
   protected DOMNode render() {
-    Func getCloseButton = () ->
+    Func<DOMNode> getCloseButton = () ->
       $DOM.div().className("modal-exit").onClick(this.props.onClose).html(
           "&times"
       );
 
-    Func getModalSpinner = () -> {
+    Func<DOMNode> getModalSpinner = () -> {
       $Loader.Props loaderProps = new $Loader.Props();
       loaderProps.loading = true;
       return $DOM.div().className("modal-waiting").html(
