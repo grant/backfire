@@ -11,11 +11,12 @@ import java.util.stream.Collectors;
  * A single DOM node.
  */
 public abstract class DOMNode implements HTML {
-  protected String className;
-  protected String innerHTML;
+  protected String className = "";
+  protected String innerHTML = "";
   protected List<HTML> childrenDOMNodes = new ArrayList<>();
 
   public DOMNode className(String className) {
+    this.className = className;
     return this;
   }
 
@@ -50,7 +51,12 @@ public abstract class DOMNode implements HTML {
   }
 
   public String getOuterHTML() {
-    return getOpenTag() + getInnerHTML() + getCloseTag();
+    String inside = getInnerHTML();
+    if (inside.isEmpty()) {
+      return "<" + getTagName() + " />";
+    } else {
+      return getOpenTag() + inside + getCloseTag();
+    }
   }
 
   public String getInnerHTML() {

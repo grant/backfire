@@ -8,7 +8,7 @@ import cm.grant.backfire.js.Func;
 import cm.grant.backfire.js.Noop;
 
 /**
- * An example modal class
+ * An modal.
  */
 public class $Modal extends ReactComponent {
   private Props props = new Props();
@@ -20,11 +20,11 @@ public class $Modal extends ReactComponent {
     /** Method to end the modal sequence on demand */
     public Func onClose = new Noop();
     /** Whether to show the 'x' close button in the top right */
-    public Boolean showCloseButton = true;
+    public boolean showCloseButton = true;
     /** whether the modal is in a waiting state */
-    public Boolean waiting = false;
+    public boolean waiting = false;
     /** whether the modal is delayed */
-    public Boolean delayed = false;
+    public boolean delayed = false;
   }
 
   public $Modal() {}
@@ -47,7 +47,6 @@ public class $Modal extends ReactComponent {
       );
     };
 
-    Func getCloseButton1 = getCloseButton;
     return $DOM.div().className("Modal " + this.props.className).html(
         $DOM.div().className("modal-dialog " + (this.props.delayed ? "delayed" : "")).html(
             this.props.showCloseButton ? getCloseButton.get() : null,

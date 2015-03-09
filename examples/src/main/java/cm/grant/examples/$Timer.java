@@ -11,7 +11,7 @@ import static cm.grant.backfire.js.Interval.clearInterval;
 import static cm.grant.backfire.js.Interval.setInterval;
 
 /**
- *
+ * A timer.
  */
 public class $Timer extends ReactComponent {
   private class State extends StateType {

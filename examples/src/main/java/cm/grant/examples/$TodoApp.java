@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * The classic TodoApp.
  */
 public class $TodoApp extends ReactComponent {
   private class State extends StateType {

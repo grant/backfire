@@ -9,6 +9,9 @@ public class $TodoListTest extends TestCase {
     $TodoList.Props props = new $TodoList.Props();
     props.items = List.of("milk", "cookies");
     $TodoList $TodoList = new $TodoList(props);
-    System.out.println($TodoList.render());
+    assertEquals(
+        "<ul><li>milk</li><li>cookies</li></ul>",
+        $TodoList.render().toString()
+    );
   }
 }

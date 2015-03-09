@@ -11,7 +11,7 @@ import cm.grant.backfire.ReactComponent;
 public class $HelloMessage extends ReactComponent {
   final Props props;
   public static class Props extends PropTypes {
-    public String name;
+    public String name = "";
   }
 
   public $HelloMessage() {

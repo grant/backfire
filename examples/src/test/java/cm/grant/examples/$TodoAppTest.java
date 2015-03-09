@@ -6,6 +6,6 @@ public class $TodoAppTest extends TestCase {
 
   public void testRender() throws Exception {
     $TodoApp app = new $TodoApp();
-    System.out.println(app.render());
+    assertEquals("<div><h3>TODO</h3><ul /><form><input /><button>Add #01</button></form></div>", app.render().toString());
   }
 }

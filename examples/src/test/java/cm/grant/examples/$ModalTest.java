@@ -6,6 +6,6 @@ public class $ModalTest extends TestCase {
 
   public void testRender() throws Exception {
     $Modal modal = new $Modal();
-    modal.render();
+    System.out.println(modal.render());
   }
 }

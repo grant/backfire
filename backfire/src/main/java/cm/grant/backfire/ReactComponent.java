@@ -8,6 +8,10 @@ public abstract class ReactComponent implements HTML {
 
   protected abstract DOMNode render();
 
+  public ReactComponent() {
+    componentDidMount();
+  }
+
   protected void componentDidMount() {
 
   }

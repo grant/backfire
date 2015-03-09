@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *
+ * A TodoList.
  */
 public class $TodoList extends ReactComponent {
   final Props props;

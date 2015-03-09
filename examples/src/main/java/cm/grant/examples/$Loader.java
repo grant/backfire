@@ -7,7 +7,7 @@ import cm.grant.backfire.ReactComponent;
 import cm.grant.backfire.js.Func;
 
 /**
- *
+ * A loader.
  */
 public class $Loader extends ReactComponent {
   public enum FLAVOR {
