@@ -1,4 +1,4 @@
-# backfire
+## :boom: backfire :boom:
 
 WIP/Experiment: A type version of React, implemented in Java.
 
@@ -15,6 +15,8 @@ WIP/Experiment: A type version of React, implemented in Java.
 From the [React Home Page](http://facebook.github.io/react/).
 
 #### A Simple Component
+
+###### Java
 
 ```java
 public class $HelloMessage extends ReactComponent {
@@ -38,6 +40,8 @@ public class $HelloMessage extends ReactComponent {
 }
 ```
 
+###### JSX
+
 ```jsx
 var HelloMessage = React.createClass({
   render: function() {
@@ -47,6 +51,8 @@ var HelloMessage = React.createClass({
 ```
 
 #### A Stateful Component
+
+###### Java
 
 ```java
 public class $Timer extends ReactComponent {
@@ -82,6 +88,8 @@ public class $Timer extends ReactComponent {
 }
 ```
 
+###### JSX
+
 ```jsx
 var Timer = React.createClass({
   getInitialState: function() {
@@ -108,4 +116,6 @@ var Timer = React.createClass({
 });
 ```
 
-Try out the `test` to see how this works.
+#### Tests
+
+Try out the `src/test` to see how this works.
