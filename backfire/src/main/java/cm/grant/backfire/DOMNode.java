@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * A single DOM node.
  */
-public class DOMNode {
+public class DOMNode implements HTML {
   protected String tagName;
   protected String className;
   protected String innerHTML;
@@ -25,16 +25,10 @@ public class DOMNode {
     }
     return this;
   }
-  public DOMNode html(DOMNode ...d) {
+  public DOMNode html(List<? extends HTML> d) {
     return this;
   }
-  public DOMNode html(List<DOMNode> d) {
-    return this;
-  }
-  public DOMNode html(ReactComponent ...d) {
-    return this;
-  }
-  public DOMNode html(List<ReactComponent> ...d) {
+  public DOMNode html(HTML ...d) {
     return this;
   }
 

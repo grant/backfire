@@ -22,7 +22,7 @@ public class $Loader extends ReactComponent {
     LARGE
   }
 
-  private Props props = new Props();
+  private final Props props;
   public static class Props extends PropTypes {
     public boolean loading;
     public FLAVOR flavor = FLAVOR.DEFAULT;

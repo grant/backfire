@@ -3,7 +3,7 @@ package cm.grant.backfire;
 /**
  * A React component.
  */
-public abstract class ReactComponent {
+public abstract class ReactComponent implements HTML {
   private StateType state;
   protected abstract DOMNode render();
 
