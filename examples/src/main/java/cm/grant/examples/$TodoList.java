@@ -11,13 +11,13 @@ import java.util.stream.Collectors;
 /**
  *
  */
-public class TodoList extends ReactComponent {
+public class $TodoList extends ReactComponent {
   final Props props;
   public static class Props extends PropTypes {
     public List<String> items;
   }
 
-  public TodoList(Props props) {
+  public $TodoList(Props props) {
     this.props = props;
   }
 

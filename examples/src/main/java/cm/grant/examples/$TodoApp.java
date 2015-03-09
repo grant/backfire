@@ -14,7 +14,7 @@ import java.util.List;
 /**
  *
  */
-public class TodoApp extends ReactComponent {
+public class $TodoApp extends ReactComponent {
   private class State extends StateType {
     public List<String> items = new ArrayList<>();
     public String text;
@@ -40,7 +40,7 @@ public class TodoApp extends ReactComponent {
   @Override
   protected DOMNode render() {
     // TodoList
-    TodoList.Props listProps = new TodoList.Props();
+    $TodoList.Props listProps = new $TodoList.Props();
     listProps.items = getState().items;
 
     // Form
@@ -53,7 +53,7 @@ public class TodoApp extends ReactComponent {
     inputProps.value = getState().text;
 
     return $DOM.div($DOM.h3().html("TODO"),
-        new TodoList(listProps),
+        new $TodoList(listProps),
         $DOM.form(formProps).html(
             $DOM.input(inputProps),
             $DOM.button("Add #" + getState().items.size() + 1)

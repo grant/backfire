@@ -8,26 +8,33 @@ import cm.grant.backfire.js.GlobalEventProps;
 public class $DOM {
   public static class Button extends DOMNode {
     public Button() {
-      tagName = "button";
+
     }
 
     public Button(String s) {
       innerHTML = s;
     }
+
+    @Override
+    public String getTagName() {
+      return "button";
+    }
   }
 
   public static class Input extends DOMNode {
-    public static final String TAG_NAME = "input";
     private final Props props;
 
     public Input() {
-      tagName = TAG_NAME;
       this.props = null;
     }
 
     public Input(Props props) {
-      tagName = TAG_NAME;
       this.props = props;
+    }
+
+    @Override
+    public String getTagName() {
+      return "input";
     }
 
     public static class Props extends GlobalEventProps {
@@ -36,17 +43,19 @@ public class $DOM {
   }
 
   public static class Form extends DOMNode {
-    public static final String TAG_NAME = "form";
     private final Props props;
 
     public Form() {
-      tagName = TAG_NAME;
       this.props = null;
     }
 
     public Form(Props props) {
-      tagName = TAG_NAME;
       this.props = props;
+    }
+
+    @Override
+    public String getTagName() {
+      return "form";
     }
 
     public static class Props extends GlobalEventProps {
@@ -54,33 +63,45 @@ public class $DOM {
   }
 
   public static class H3 extends DOMNode {
-    public H3() {
-      tagName = "h3";
+
+    @Override
+    public String getTagName() {
+      return "h3";
     }
   }
 
   public static class Ul extends DOMNode {
-    public Ul() {
-      tagName = "ul";
+
+    @Override
+    public String getTagName() {
+      return "ul";
     }
   }
 
   public static class Li extends DOMNode {
-    public Li() {
-      tagName = "li";
+
+    @Override
+    public String getTagName() {
+      return "li";
     }
   }
 
   public static class Div extends DOMNode {
     public Div() {
-      tagName = "div";
+
+    }
+
+    public Div(HTML... html) {
+      html(html);
+    }
+
+    @Override
+    public String getTagName() {
+      return "div";
     }
   }
 
   public static class Img extends ImgNode {
-    public Img() {
-      tagName = "img";
-    }
   }
 
   public static Div div() {
@@ -88,7 +109,7 @@ public class $DOM {
   }
 
   public static Div div(HTML... d) {
-    return new Div();
+    return new Div(d);
   }
 
   public static Img img() {

@@ -26,6 +26,11 @@ public abstract class ReactComponent implements HTML {
   }
 
   @Override
+  public String getTagName() {
+    return this.getClass().getSimpleName();
+  }
+
+  @Override
   public String toString() {
     DOMNode node = this.render();
     return node.getOuterHTML();
