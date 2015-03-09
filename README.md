@@ -1,6 +1,6 @@
-## :boom: backfire :boom:
+# :boom: :boom: backfire :boom: :boom:
 
-WIP/Experiment: A type version of React, implemented in Java.
+**Experimental**: A typed version of React, implemented in Java.
 
 > One of the greatest annoyances with Javascript/React is not being able to get
 > **syntax errors** from a compiler and **autocompletion** from an IDE.
@@ -10,7 +10,7 @@ WIP/Experiment: A type version of React, implemented in Java.
 > What's currently implemented is just half the battle, (getting compilable java code with React-like syntax)
 > The next half of the battle would be transpiling the Java source code to Javascript source code.
 
-### Examples
+## Examples
 
 From the [React Home Page](http://facebook.github.io/react/).
 
