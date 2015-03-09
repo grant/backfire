@@ -6,6 +6,54 @@ import cm.grant.backfire.js.GlobalEventProps;
  * A DOM element.
  */
 public class $DOM {
+  public static Div div() {
+    return new Div();
+  }
+
+  public static Div div(HTML... d) {
+    return new Div(d);
+  }
+
+  public static Img img() {
+    return new Img();
+  }
+
+  public static Li li() {
+    return new Li();
+  }
+
+  public static Ul ul() {
+    return new Ul();
+  }
+
+  public static H3 h3() {
+    return new H3();
+  }
+
+  public static Form form() {
+    return new Form();
+  }
+
+  public static Form form(Form.Props props) {
+    return new Form(props);
+  }
+
+  public static Input input() {
+    return new Input();
+  }
+
+  public static Input input(Input.Props props) {
+    return new Input(props);
+  }
+
+  public static Button button() {
+    return new Button();
+  }
+
+  public static Button button(String s) {
+    return new Button(s);
+  }
+
   public static class Button extends DOMNode {
     public Button() {
 
@@ -102,53 +150,5 @@ public class $DOM {
   }
 
   public static class Img extends ImgNode {
-  }
-
-  public static Div div() {
-    return new Div();
-  }
-
-  public static Div div(HTML... d) {
-    return new Div(d);
-  }
-
-  public static Img img() {
-    return new Img();
-  }
-
-  public static Li li() {
-    return new Li();
-  }
-
-  public static Ul ul() {
-    return new Ul();
-  }
-
-  public static H3 h3() {
-    return new H3();
-  }
-
-  public static Form form() {
-    return new Form();
-  }
-
-  public static Form form(Form.Props props) {
-    return new Form(props);
-  }
-
-  public static Input input() {
-    return new Input();
-  }
-
-  public static Input input(Input.Props props) {
-    return new Input(props);
-  }
-
-  public static Button button() {
-    return new Button();
-  }
-
-  public static Button button(String s) {
-    return new Button(s);
   }
 }

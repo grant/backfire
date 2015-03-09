@@ -5,11 +5,13 @@ package cm.grant.backfire;
  */
 public abstract class ReactComponent implements HTML {
   private StateType state;
+
   protected abstract DOMNode render();
 
   protected void componentDidMount() {
 
   }
+
   protected void componentWillUnmount() {
 
   }
@@ -21,6 +23,7 @@ public abstract class ReactComponent implements HTML {
       return state;
     }
   }
+
   protected void setState(StateType st) {
     state = st;
   }
